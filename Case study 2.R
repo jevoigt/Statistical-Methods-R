@@ -1,4 +1,5 @@
 ex0126
+
 mean(ex0126$Pro05, na.rm = T)
 mean(ex0126$Anti05, na.rm = T)
 mean(ex0126$Pro06, na.rm = T)
