@@ -2,6 +2,7 @@ install.packages("mosaic")
 require(mosaic)
 install.packages("Sleuth3")
 require(Sleuth3)
+
 in_state = c(1000,4000,5000,8000,40000)
 mean(in_state)
 mean(log(in_state))
@@ -42,14 +43,18 @@ install.packages("readxl")
 library('readxl')
 fusion = read_excel("fusion.xls")
 View(fusion)
+
+
 boxplot(Time~condition, data = fusion)
 boxplot(log(Time)~condition, data = fusion)
+
 sd(log(fusion$Time[fusion$condition == "1"]))
 sd(log(fusion$Time[fusion$condition == "2"]))
 mean(fusion$Time[fusion$condition == "1"])
 mean(fusion$Time[fusion$condition == "2"])     
 sd(fusion$Time[fusion$condition == "1"])
 sd(fusion$Time[fusion$condition == "2"])   
+
 hist(fusion$Time[fusion$condition == "1"])
 hist(fusion$Time[fusion$condition == "2"])
 t.test(Time~condition, var.equal = T, data = fusion)
@@ -60,6 +65,8 @@ t.test(log(Time)~condition, data = fusion)
 exp(0.431)
 exp(0.060)
 exp(0.801)
+
+
 #4
 obsrank = rank(fusion$Time, ties.method = "average")    #Ask about this
 obsrank
