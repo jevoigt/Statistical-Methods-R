@@ -4,12 +4,16 @@ install.packages("Sleth3")
 require("Sleuth3")
 trellis.par.set(theme = col.mosaic()) # get a better color scheme for lattice
 options(digits = 3)
+
 summary(case0101)
 favstats(Score~Treatment, data = case0101)
 histogram(~Score | Treatment, data = case0101)
+
 with(subset(case0101, Treatment == "Extrinsic"), stem(Score, scale = 5))
 with(subset(case0101, Treatment == "Intrinsic"), stem(Score, scale = 5))
+
 aggregate(Score ~ Treatment, data = case0101, FUN = stem, scale = 5)
+
 t.test(Score~Treatment, alternative = "two.sided",conf = 0.95, data = case0101)
 summary(lm(Score~Treatment, data = case0101))
 diffmeans = diff(mean(Score~Treatment, data = case0101))
@@ -17,11 +21,10 @@ diffmeans
 numsim = 1000
 nulldist = do(numsim) * diff(mean(Score~shuffle(Treatment), data = case0101))
 confint(nulldist)
+
 head(case0101)
 boxplot(Score~Treatment, data = case0101)
 t.test(Score~Treatment, var.equal=T, data = case0101)
-
-
 
 
 #Sex Descrimination 
