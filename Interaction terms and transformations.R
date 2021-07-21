@@ -2,6 +2,7 @@ require(Sleuth3)
 require(mosaic)
 ex0914
 
+
 pairs(~Heart+Bank+Walk+Talk, upper.panel = panel.smooth, lower.panel = panel.smooth, data = ex0914)
 Reg_heart = lm(Heart~Bank+Walk+Talk, data = ex0914)
 summary(Reg_heart)
