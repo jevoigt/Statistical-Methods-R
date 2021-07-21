@@ -6,6 +6,7 @@ Subject = c(1:47)
 ex0327$Subject = Subject
 
 
+#Plots
 ggplot(ex0327, aes(x = log(DurationOfVisit), y = PollenRemoved)) +
   geom_point(aes(color=as.factor(BeeType)))
 
