@@ -68,6 +68,7 @@ ex0126
 (-1.1429)/(SE.RO)
 t.test(ex0112$BP[ex0112$Diet == "RegularOil"])
 
+
 #AFQT
 ex0222
 mean(ex0222$AFQT[ex0222$Gender == "male"])
