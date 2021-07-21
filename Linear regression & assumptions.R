@@ -21,6 +21,7 @@ n
 sqrt((SSR)/(270))
 confint(lm1)
 
+
 beta0 = coef(lm1)["(Intercept)"]
 beta0
 beta1 = coef(lm1)["eruptions"]
